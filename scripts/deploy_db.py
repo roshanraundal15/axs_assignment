@@ -14,6 +14,8 @@ def main():
     database_url = os.getenv("DATABASE_URL")
     if not database_url:
         raise RuntimeError("DATABASE_URL must be set before database initialization")
+    if database_url.startswith("postgresql://"):
+        database_url = database_url.replace("postgresql://", "postgresql+psycopg://", 1)
 
     engine = create_engine(database_url)
     with engine.begin() as connection:

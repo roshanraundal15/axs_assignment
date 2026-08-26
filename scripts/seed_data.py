@@ -12,6 +12,8 @@ load_dotenv()
 DATABASE_URL = os.getenv(
     "DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/axs_rag"
 )
+if DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+psycopg://", 1)
 
 CITIES = ["Mumbai", "Pune", "Bengaluru", "Hyderabad", "Delhi", "Chennai", "Kolkata"]
 DEPARTMENTS = ["Engineering", "Sales", "Support", "Finance", "Operations"]
