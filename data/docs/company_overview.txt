@@ -1,0 +1,17 @@
+AXS Internal Knowledge Base — Company Overview
+
+AXS is a technology company focused on AI/ML solutions for enterprise clients.
+Headquarters: Mumbai, India.
+Founded: 2018.
+Core products: Analytics Suite, Cloud License, Support Plan, API Credits, Training packages.
+
+Sales regions: West, South, North, East, Central.
+Fiscal year runs from April to March.
+Customer status values: active, inactive.
+Project status values: active, completed, on_hold.
+
+Business rules:
+- Top customers are ranked by total sales amount.
+- Engineering department typically has the highest average salaries.
+- Q1 means January–March, Q2 April–June, Q3 July–September, Q4 October–December (calendar year for this demo database).
+- "Last year" means the previous calendar year relative to today.

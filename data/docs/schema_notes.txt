@@ -1,0 +1,15 @@
+Database Schema Notes for Analysts
+
+Tables:
+1) customers — who buys from us (name, email, city, signup_date, status)
+2) employees — internal staff (department, role, salary, manager hierarchy)
+3) projects — delivery work linked to a customer and a lead employee
+4) sales — revenue events linked to customer, employee, optional project
+
+Joins:
+- sales.customer_id -> customers.customer_id
+- sales.employee_id -> employees.employee_id
+- projects.customer_id -> customers.customer_id
+- projects.lead_employee_id -> employees.employee_id
+
+If SQL cannot answer a conceptual/policy question, use these notes.

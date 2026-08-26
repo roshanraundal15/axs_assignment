@@ -1,0 +1,17 @@
+AXS Sales Playbook (Internal Notes)
+
+When analyzing sales:
+- Always prefer aggregations by region or product for executive summaries.
+- A large deal is typically above 200,000 INR in this demo dataset scale.
+- Support Plan and Cloud License are the most common products.
+- Sales can optionally link to a project via project_id.
+
+FAQ:
+Q: How do we define top customers?
+A: Sum of sales.amount grouped by customer, ordered descending.
+
+Q: What is an active project?
+A: projects.status = 'active'.
+
+Q: How to compute average salary?
+A: AVG(salary) from employees, optionally GROUP BY department.
