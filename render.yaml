@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: axs-multi-agent-rag
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python scripts/deploy_db.py && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: axs-rag-db
+          property: connectionString
+      - key: LLM_PROVIDER
+        value: ""
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+
+databases:
+  - name: axs-rag-db
+    databaseName: axs_rag
+    plan: free
