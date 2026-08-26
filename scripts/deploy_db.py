@@ -5,7 +5,7 @@ from pathlib import Path
 from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
 
-from scripts.seed_data import main as seed_data
+from seed_data import main as seed_data
 
 load_dotenv()
 
